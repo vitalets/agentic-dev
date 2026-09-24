@@ -2,6 +2,8 @@
 
 Structure TypeScript source files for top-down reading: a reader should understand what the file does before encountering implementation details.
 
+Ignore configuration files (for example, `vite.config.ts`, `playwright.config.ts`, and `eslint.config.ts`); the rules below do not apply to them.
+
 ## Ordering Rules
 
 1. **File purpose** — start the file with a concise block comment describing the module’s overall purpose and boundaries. Do not list its exports or repeat documentation provided on individual exported members.
