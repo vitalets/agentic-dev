@@ -2,7 +2,7 @@
 
 Structure TypeScript source files for top-down reading: a reader should understand what the file does before encountering implementation details.
 
-Ignore configuration files (for example, `vite.config.ts`, `playwright.config.ts`, and `eslint.config.ts`); the rules below do not apply to them.
+Ignore configuration files (for example, `vite.config.ts`, `playwright.config.ts`, and `eslint.config.ts`) and test files (for example, `*.test.ts` and `*.spec.ts`); the rules below do not apply to them.
 
 ## Ordering Rules
 
@@ -25,6 +25,11 @@ Ignore configuration files (for example, `vite.config.ts`, `playwright.config.ts
 - Do not add `@param` or `@returns` tags when TypeScript already expresses them.
 - Where useful, include 1–2 short inline examples, especially for reusable helpers.
 - Use simple, direct language. Keep important technical details; simplify the wording, not the content.
+- Preserve existing comments, including TODOs, intent, rationale, and examples.
+  When applying these rules, you may change their formatting, but must retain
+  their meaning. Remove or rewrite their content only when explicitly requested
+  or when a code change makes them inaccurate. This preservation rule takes
+  precedence over guidance to avoid obvious or redundant comments.
 
 ## Return Types
 
