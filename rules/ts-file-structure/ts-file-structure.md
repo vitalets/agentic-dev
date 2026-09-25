@@ -5,7 +5,7 @@ Structure TypeScript source files for top-down reading: a reader should understa
 ## Files in Scope
 
 - **Apply to:** TypeScript source files (`.ts` and `.tsx`), such as application modules, components, services, and shared utilities.
-- **Do not apply to:** Configuration files (for example, `vite.config.ts`, `playwright.config.ts`, and `eslint.config.ts`), test files (for example, `*.test.ts`, `*.spec.ts`, and their `.tsx` equivalents), or files written in other languages.
+- **Ignore:** Configuration files (for example, `vite.config.ts`, `playwright.config.ts`, and `eslint.config.ts`), test files (for example, `*.test.ts`, `*.spec.ts`, and their `.tsx` equivalents), or files written in other languages.
 
 These scope boundaries apply to all rules below.
 
