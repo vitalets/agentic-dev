@@ -4,7 +4,7 @@ Structure TypeScript source files for top-down reading: a reader should understa
 
 Ignore configuration files (for example, `vite.config.ts`, `playwright.config.ts`, and `eslint.config.ts`) and test files (for example, `*.test.ts` and `*.spec.ts`); the rules below do not apply to them.
 
-## Ordering Rules
+## Ordering
 
 1. **File purpose** — start the file with a concise block comment describing the module’s overall purpose and boundaries. Do not list its exports or repeat documentation provided on individual exported members.
 2. **Imports** — external dependencies first, then internal modules according to the project's import conventions.
@@ -15,9 +15,11 @@ Ignore configuration files (for example, `vite.config.ts`, `playwright.config.ts
 7. **Lower-level implementation** — supporting functions ordered roughly by call flow, with callers before callees.
 8. **Leaf helpers and utilities** — small implementation details with no meaningful orchestration responsibilities.
 
-## Commenting Rules
+## Commenting
 
-- Always use multi-line block-form JSDoc.
+- Use multi-line block-form JSDoc for file-level and declaration documentation,
+  including existing comments on functions, methods, and constants. Reformat or
+  rewrite these comments as needed, preserving their meaning and useful details.
 - Document all exported functions and module-level constants. Focus on their purpose and role, not on implementation.
 - Do not document constructors.
 - For types, internal functions and helpers, comment them only when their purpose, behavior, or role in the module is not obvious from the code and naming.
@@ -25,11 +27,12 @@ Ignore configuration files (for example, `vite.config.ts`, `playwright.config.ts
 - Do not add `@param` or `@returns` tags when TypeScript already expresses them.
 - Where useful, include 1–2 short inline examples, especially for reusable helpers.
 - Use simple, direct language. Keep important technical details; simplify the wording, not the content.
-- Preserve existing comments, including TODOs, intent, rationale, and examples.
-  When applying these rules, you may change their formatting, but must retain
-  their meaning. Remove or rewrite their content only when explicitly requested
-  or when a code change makes them inaccurate. This preservation rule takes
-  precedence over guidance to avoid obvious or redundant comments.
+- Preserve existing comments inside function and method bodies (including
+  constructors and callbacks) as written, including their wording, comment syntax,
+  and line breaks. Only adjust leading indentation when surrounding code moves.
+  Change or remove these comments only when explicitly requested or when a code
+  change makes them inaccurate. This preservation rule takes precedence over all
+  other commenting guidance, including for declarations nested inside these bodies.
 
 ## Return Types
 
