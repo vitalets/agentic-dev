@@ -1,6 +1,6 @@
 # TypeScript File Structure
 
-A rule for organizing TypeScript source files for top-down reading and documenting their public API. See [the rule](./ts-file-structure.md) for the full instructions.
+A rule for organizing TypeScript source files for top-down reading, documenting their public API, and guiding code quality. See [the rule](./ts-file-structure.md) for the full instructions.
 
 ## Install
 
