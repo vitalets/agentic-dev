@@ -1,6 +1,6 @@
-# Test File Structure
+# Good Tests
 
-Rules for structuring test files. See [the rule](./test-file-structure.md).
+Rules for writing readable, reliable tests. See [the rule](./good-tests.md).
 
 ## Install or update
 
@@ -9,8 +9,8 @@ Run from your project's root directory to download the latest rule into `.agents
 ```sh
 mkdir -p .agents/rules
 curl --fail --show-error --silent --location \
-  https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/test-file-structure/test-file-structure.md \
-  --output .agents/rules/test-file-structure.md
+  https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/good-tests/good-tests.md \
+  --output .agents/rules/good-tests.md
 ```
 
 ## Reference in AGENTS.md
@@ -21,5 +21,5 @@ Add the following to your project's root `AGENTS.md` (create it if needed):
 ## Tests
 
 When creating or editing test files, read and follow
-[the test file structure rule](.agents/rules/test-file-structure.md).
+[the good tests rule](.agents/rules/good-tests.md).
 ```

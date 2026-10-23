@@ -1,4 +1,4 @@
-# Test File Structure
+# Good Tests
 
 Tests should make it clear what is being tested as the reader reads them, without requiring a dive into implementation details. All rules below support this guiding principle of readability.
 
