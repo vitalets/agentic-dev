@@ -1,6 +1,6 @@
 # AGENTS.md Guidance
 
-Placeholder for reusable recommendations on writing concise, useful `AGENTS.md` instructions across repositories.
+Use this guidance as a collection of reusable `AGENTS.md` sections. Copy and paste the relevant snippets into your repository's `AGENTS.md`, adapting them to its needs.
 
 ### Source file structure
 
