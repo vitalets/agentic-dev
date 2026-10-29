@@ -2,6 +2,7 @@
 
 Tests should make it clear what is being tested as the reader reads them, without requiring a dive into implementation details. All rules below support this guiding principle of readability.
 
+- Keep test titles focused on the main behavior being tested. Use concise inline comments to explain secondary checks or distinct phases instead of listing every step in the title.
 - Write tests as straight-line sequences of plain instructions. Avoid loops, `if` statements, and other conditional logic unless explicitly requested by the user.
 - Use variables in the test body when their names explain a value's role or intent and make the test easier to understand. Consider extracting bulky multiline expressions into variables when this simplifies the surrounding actions or assertions and improves readability. Prefer inline values when a variable would merely hold a value without adding meaning or simplifying the syntax, forcing the reader to look up its definition. Reuse alone is not a reason to introduce a variable; it should make the test easier to read.
 - Group similar small checks in one clearly named test when that is easier to read than separate tests with repetitive or lengthy titles. Split checks when they cover unrelated scenarios or make the test difficult to follow; do not enforce one behavior or assertion per test.
