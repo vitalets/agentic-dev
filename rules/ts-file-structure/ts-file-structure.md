@@ -38,6 +38,7 @@ These scope boundaries apply to all rules below.
   Change or remove these comments only when explicitly requested or when a code
   change makes them inaccurate. This preservation rule takes precedence over all
   other commenting guidance, including for declarations nested inside these bodies.
+- When suppressing ESLint for a single line, use the `// eslint-disable-next-line ...` form, not `// eslint-disable-line ...`.  
 
 ## Return Types
 
@@ -45,6 +46,8 @@ These scope boundaries apply to all rules below.
 
 ## Code Quality
 
+- **Align variable names with their types:** Use the type’s domain term in variable names rather than introducing a different term. For example, a value of type `SavedItem` could be named `savedItem`. Add role-specific qualifiers when needed to distinguish values, such as `sourceItem` and `targetItem`.
+- **Prefer explicit function and method names:** Where practical, use specific verbs such as `find`, `save`, `remove`, or `create` rather than broad terms like `resolve`, `handle`, or `process`. Make meaningful side effects visible, especially when a function or method both looks up and creates data. For example, prefer `findOrCreateStoredGroup` over `resolveLocalGroup`, and `saveGroupFromMatchingBindingHint` over `recognizeGroup`. General verbs are still reasonable when they accurately describe the function or method’s role, such as an event handler.
 - **Simple control flow:** Keep branches and conditions easy to follow. Use optional chaining when it simplifies access.
 - **Shallow nesting:** Prefer guard clauses and early returns. Extract meaningful operations when nested blocks obscure the main flow.
 - **Readable callbacks:** Avoid deeply nested callbacks. Use named helpers or `async`/`await` where appropriate without changing execution behavior.
