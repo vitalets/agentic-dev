@@ -25,7 +25,8 @@ These scope boundaries apply to all rules below.
 - Use multi-line block-form JSDoc for file-level and declaration documentation,
   including existing comments on functions, methods, and constants. Reformat or
   rewrite these comments as needed, preserving their meaning and useful details.
-- Document all exported functions and module-level constants. Focus on their purpose and role, not on implementation.
+- Document all exported functions and module-level constants, except as described below. Focus on their purpose and role, not on implementation.
+- When a module centers on one exported class or function, document its purpose in the file-level comment and omit redundant documentation on that declaration. Supporting exports do not change this guidance. Keep declaration comments only when they add distinct, useful details.
 - Do not document constructors.
 - For types, internal functions and helpers, comment them only when their purpose, behavior, or role in the module is not obvious from the code and naming.
 - Do not restate implementation details that are already clear from the code.
