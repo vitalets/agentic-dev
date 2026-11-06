@@ -18,8 +18,9 @@ curl --fail --show-error --silent --location \
 Add the following to your project's root `AGENTS.md` (create it if needed):
 
 ```md
-## TypeScript
+## Source file structure
 
-When creating or editing TypeScript source files, read and follow
-[the TypeScript file structure rule](.agents/rules/ts-file-structure.md).
+Before creating or editing TypeScript source files, read
+[the TypeScript file structure rule](.agents/rules/ts-file-structure.md) and apply
+its scope rules. Before finishing, check the changed code against it.
 ```

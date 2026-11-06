@@ -19,6 +19,9 @@ using the latest version on main.
 Copy the relevant rule files into .agents/rules/ and add or update references to
 them in the root AGENTS.md, creating it if needed. Merge relevant snippets from
 rules/agents-md/agents-md.md into AGENTS.md rather than copying that file wholesale.
+Use explicit loading instructions from those snippets: read the relevant rule
+before creating or editing files, respect its scope, and check the changed code
+against it before finishing.
 
 Preserve existing project-specific instructions and reconcile any local rule
 customizations with the upstream changes. Avoid duplicate sections or references.

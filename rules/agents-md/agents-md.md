@@ -7,7 +7,9 @@ Use this guidance as a collection of reusable `AGENTS.md` sections. Copy and pas
 ```md
 ## Source file structure
 
-When creating or editing TypeScript files, follow `.agents/rules/ts-file-structure.md`.
+Before creating or editing TypeScript source files, read
+[the TypeScript file structure rule](.agents/rules/ts-file-structure.md) and apply
+its scope rules. Before finishing, check the changed code against it.
 ```
 
 ### Tests
@@ -15,8 +17,9 @@ When creating or editing TypeScript files, follow `.agents/rules/ts-file-structu
 ```md
 ## Tests
 
-When creating or editing test files, follow
-`.agents/rules/good-tests.md`.
+Before creating or editing test files, read and follow
+[the good tests rule](.agents/rules/good-tests.md).
+Before finishing, check the changed tests against it.
 ```
 
 ### Planning

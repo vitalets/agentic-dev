@@ -20,6 +20,7 @@ Add the following to your project's root `AGENTS.md` (create it if needed):
 ```md
 ## Tests
 
-When creating or editing test files, read and follow
+Before creating or editing test files, read and follow
 [the good tests rule](.agents/rules/good-tests.md).
+Before finishing, check the changed tests against it.
 ```
