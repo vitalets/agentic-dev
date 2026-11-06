@@ -1,4 +1,4 @@
-# TypeScript File Structure
+# Writing TypeScript
 
 Structure TypeScript source files for top-down reading: a reader should understand what the file does before encountering implementation details.
 

@@ -4,9 +4,9 @@ Reusable instructions for coding agents.
 
 ## Available rules
 
-- [TypeScript file structure](rules/ts-file-structure/ts-file-structure.md): Organize TypeScript source files, comments, and code for readability.
-- [Good tests](rules/good-tests/good-tests.md): Write readable tests that verify observable behavior.
-- [AGENTS.md guidance](rules/agents-md/agents-md.md): Reusable sections to merge into a project's `AGENTS.md`, including planning guidance.
+- [Writing TypeScript](rules/writing-typescript/writing-typescript.md): Organize TypeScript source files, comments, and code for readability.
+- [Writing tests](rules/writing-tests/writing-tests.md): Write readable tests that verify observable behavior.
+- [Writing AGENTS.md](rules/writing-agents-md/writing-agents-md.md): Reusable sections to merge into a project's `AGENTS.md`, including planning guidance.
 
 ## Install or update a consumer repository
 
@@ -18,7 +18,7 @@ using the latest version on main.
 
 Copy the relevant rule files into .agents/rules/ and add or update references to
 them in the root AGENTS.md, creating it if needed. Merge relevant snippets from
-rules/agents-md/agents-md.md into AGENTS.md rather than copying that file wholesale.
+rules/writing-agents-md/writing-agents-md.md into AGENTS.md rather than copying that file wholesale.
 Use explicit loading instructions from those snippets: read the relevant rule
 before creating or editing files, respect its scope, and check the changed code
 against it before finishing.

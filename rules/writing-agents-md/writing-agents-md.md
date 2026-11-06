@@ -1,4 +1,4 @@
-# AGENTS.md Guidance
+# Writing AGENTS.md
 
 Use this guidance as a collection of reusable `AGENTS.md` sections. Copy and paste the relevant snippets into your repository's `AGENTS.md`, adapting them to its needs.
 
@@ -8,7 +8,7 @@ Use this guidance as a collection of reusable `AGENTS.md` sections. Copy and pas
 ## Source file structure
 
 Before creating or editing TypeScript source files, read
-[the TypeScript file structure rule](.agents/rules/ts-file-structure.md) and apply
+[the Writing TypeScript rule](.agents/rules/writing-typescript.md) and apply
 its scope rules. Before finishing, check the changed code against it.
 ```
 
@@ -18,7 +18,7 @@ its scope rules. Before finishing, check the changed code against it.
 ## Tests
 
 Before creating or editing test files, read and follow
-[the good tests rule](.agents/rules/good-tests.md).
+[the Writing Tests rule](.agents/rules/writing-tests.md).
 Before finishing, check the changed tests against it.
 ```
 
