@@ -22,6 +22,16 @@ Before creating or editing test files, read and follow
 Before finishing, check the changed tests against it.
 ```
 
+### Documentation
+
+```md
+## Documentation
+
+Before writing, editing, or reviewing documentation, read
+[the Writing Docs rule](.agents/rules/writing-docs.md) and apply its scope rules.
+Before finishing, check the changed documentation against it.
+```
+
 ### Planning
 
 ```md
