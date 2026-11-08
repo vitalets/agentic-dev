@@ -12,305 +12,238 @@ Simplify the wording without losing technical meaning.
 
 ## Reader and structure
 
-- Identify the reader's task and expected knowledge from the request and existing
-  documentation. Explain what this reader needs; omit background they can
-  reasonably be expected to know. Ask only when missing context would change the
-  result.
+### Reader context
 
-  **❌ Bad:**
+Identify the reader's task and expected knowledge from the request and existing
+documentation. Explain what this reader needs; omit background they can
+reasonably be expected to know. Ask only when missing context would change the
+result.
 
-  In a setup guide for developers who already use TypeScript:
+**❌ Bad:**
 
-  > TypeScript is a programming language that adds types to JavaScript. Install
-  > the package with `npm install example-client`.
+In a setup guide for developers who already use TypeScript:
 
-  **✅ Good:**
+> TypeScript is a programming language that adds types to JavaScript. Install
+> the package with `npm install example-client`.
 
-  > Install the package with `npm install example-client`.
+**✅ Good:**
 
-- Lead with the reader's task or the feature's purpose. Introduce implementation
-  details when they help the reader understand or use the feature. Explain the
-  underlying problem first when the solution would otherwise be confusing.
+> Install the package with `npm install example-client`.
 
-  **❌ Bad:**
+### Information order
 
-  > The client uses a subscription registry and a file watcher. Call `watch()` to
-  > reload settings when the configuration file changes.
+Lead with the reader's task or the feature's purpose. Introduce implementation
+details when they help the reader understand or use the feature. Explain the
+underlying problem first when the solution would otherwise be confusing.
 
-  **✅ Good:**
+**❌ Bad:**
 
-  > To reload settings when the configuration file changes, call `watch()`.
+> The client uses a subscription registry and a file watcher. Call `watch()` to
+> reload settings when the configuration file changes.
 
-  The internal registry does not help the reader use this feature.
+**✅ Good:**
 
-- Choose structure for the document's purpose. Use headings for distinct tasks or
-  lookup needs, and lists or tables for steps and comparisons. Keep related
-  explanatory sentences in connected paragraphs. Add introductions, conclusions,
-  troubleshooting, or next steps only when they supply useful information.
+> To reload settings when the configuration file changes, call `watch()`.
 
-  **❌ Bad:**
+The internal registry does not help the reader use this feature.
 
-  > ### Overview
-  > You can choose where generated files are saved.
-  >
-  > ### Configuration
-  > Set `outputDir` to the destination directory.
-  >
-  > ### Conclusion
-  > You now know how to choose where generated files are saved.
+### Document structure
 
-  **✅ Good:**
+Choose structure for the document's purpose. Use headings for distinct tasks or
+lookup needs, and lists or tables for steps and comparisons. Keep related
+explanatory sentences in connected paragraphs. Add introductions, conclusions,
+troubleshooting, or next steps only when they supply useful information.
 
-  > Set `outputDir` to choose where generated files are saved.
+**❌ Bad:**
 
-  A short explanation needs no section template; a longer guide may need several
-  headings to make its tasks easy to find.
+> ### Overview
+> You can choose where generated files are saved.
+>
+> ### Configuration
+> Set `outputDir` to the destination directory.
+>
+> ### Conclusion
+> You now know how to choose where generated files are saved.
+
+**✅ Good:**
+
+> Set `outputDir` to choose where generated files are saved.
+
+A short explanation needs no section template; a longer guide may need several
+headings to make its tasks easy to find.
 
 ## Language
 
-- Use familiar words, concrete subjects, and direct verbs. Keep established
-  technical terms when they are precise. Prefer active voice when the actor
-  matters, but do not rewrite clear passive sentences mechanically.
+### Word choice
 
-  **❌ Bad:**
+Use familiar words, concrete subjects, and direct verbs. Keep established
+technical terms when they are precise. Prefer active voice when the actor
+matters, but do not rewrite clear passive sentences mechanically.
 
-  > Automatic installation of the extension is performed by the fixture prior to
-  > the commencement of the test.
+**❌ Bad:**
 
-  **✅ Good:**
+> Automatic installation of the extension is performed by the fixture prior to
+> the commencement of the test.
 
-  > The fixture installs the extension before the test starts.
+**✅ Good:**
 
-  Keep “fixture”: it names the exact concept the reader uses.
+> The fixture installs the extension before the test starts.
 
-- Keep conditions close to the behavior they qualify. Split sentences when
-  several conditions or actions make them difficult to follow, while preserving
-  their relationship.
+Keep “fixture”: it names the exact concept the reader uses.
 
-  **❌ Bad:**
+### Conditions and behavior
 
-  > The client retries the request, using the configured delay between attempts,
-  > if the server returns a temporary error, until the retry limit is reached.
+Keep conditions close to the behavior they qualify. Split sentences when
+several conditions or actions make them difficult to follow, while preserving
+their relationship.
 
-  **✅ Good:**
+**❌ Bad:**
 
-  > If the server returns a temporary error, the client retries the request until
-  > it reaches the retry limit. It waits for the configured delay between attempts.
+> The client retries the request, using the configured delay between attempts,
+> if the server returns a temporary error, until the retry limit is reached.
 
-- Describe features without praise or unsupported claims. Replace promotional
-  wording with the feature's purpose, not an invented measurement.
+**✅ Good:**
 
-  **❌ Bad:**
+> If the server returns a temporary error, the client retries the request until
+> it reaches the retry limit. It waits for the configured delay between attempts.
 
-  > This powerful, seamless cache makes repeated downloads incredibly fast.
+### Factual tone
 
-  **✅ Good:**
+Describe features without praise or unsupported claims. Replace promotional
+wording with the feature's purpose, not an invented measurement.
 
-  > The cache reuses downloaded files for later requests.
+**❌ Bad:**
+
+> This powerful, seamless cache makes repeated downloads incredibly fast.
+
+**✅ Good:**
+
+> The cache reuses downloaded files for later requests.
 
 ## Information and examples
 
-- Remove repeated facts and prose that merely narrates nearby code. Keep prose
-  that adds purpose, a prerequisite, timing, a consequence, or a limitation. Do
-  not explain obvious substitutions for sample values.
+### Repeated information
 
-  **❌ Bad:**
+Remove repeated facts and prose that merely narrates nearby code. Keep prose
+that adds purpose, a prerequisite, timing, a consequence, or a limitation. Do
+not explain obvious substitutions for sample values.
 
-  > Set `outputDir` to `./dist`, as shown below. Replace `./dist` with your own
-  > output directory. The path is relative to the configuration file.
+**❌ Bad:**
 
-  ```ts
-  export default { outputDir: './dist' };
-  ```
+> Set `outputDir` to `./dist`, as shown below. Replace `./dist` with your own
+> output directory. The path is relative to the configuration file.
 
-  **✅ Good:**
+```ts
+export default { outputDir: './dist' };
+```
 
-  > The output path is relative to the configuration file.
+**✅ Good:**
 
-  ```ts
-  export default { outputDir: './dist' };
-  ```
+> The output path is relative to the configuration file.
 
-  The path's base directory is necessary information that the code cannot convey.
+```ts
+export default { outputDir: './dist' };
+```
 
-- Keep prerequisites and caveats near the behavior they affect. Retain
-  explanations that change how the reader must use an example, even when a method
-  name appears self-explanatory.
+The path's base directory is necessary information that the code cannot convey.
 
-  **❌ Bad:**
+### Prerequisites and caveats
 
-  > Call `start()` and wait for the `ready` event. See Limitations for event timing.
+Keep prerequisites and caveats near the behavior they affect. Retain
+explanations that change how the reader must use an example, even when a method
+name appears self-explanatory.
 
-  **✅ Good:**
+**❌ Bad:**
 
-  > Subscribe to the `ready` event before calling `start()`: the event can fire
-  > before `start()` returns.
+> Call `start()` and wait for the `ready` event. See Limitations for event timing.
 
-- Link to authoritative documentation for background details and explain the
-  project's additions or differences locally. Keep enough context for the reader
-  to complete the task. Give shared setup or configuration a primary home and link
-  to it instead of repeating it across pages.
+**✅ Good:**
 
-  **❌ Bad:**
+> Subscribe to the `ready` event before calling `start()`: the event can fire
+> before `start()` returns.
 
-  On an API page, when authentication already has a dedicated setup guide:
+### Shared documentation
 
-  > Before calling `upload()`, create an account, generate a token, save it in
-  > `EXAMPLE_TOKEN`, and pass it to the client constructor.
+Link to authoritative documentation for background details and explain the
+project's additions or differences locally. Keep enough context for the reader
+to complete the task. Give shared setup or configuration a primary home and link
+to it instead of repeating it across pages.
 
-  **✅ Good:**
+**❌ Bad:**
 
-  > `upload()` requires an authenticated client. Follow the
-  > [authentication setup](./authentication.md) before using this example.
+On an API page, when authentication already has a dedicated setup guide:
 
-- Use the smallest example that demonstrates a useful reader task. Keep details
-  needed to understand the result; omit unrelated setup and checks. In testing
-  guides, demonstrate useful behavior rather than internal identities or counts,
-  unless those facts are the subject of the page.
+> Before calling `upload()`, create an account, generate a token, save it in
+> `EXAMPLE_TOKEN`, and pass it to the client constructor.
 
-  **❌ Bad:**
+**✅ Good:**
 
-  In a guide to saving settings:
+> `upload()` requires an authenticated client. Follow the
+> [authentication setup](./authentication.md) before using this example.
 
-  ```ts
+### Example scope
+
+Use the smallest example that demonstrates a useful reader task. Keep details
+needed to understand the result; omit unrelated setup and checks. In testing
+guides, demonstrate useful behavior rather than internal identities or counts,
+unless those facts are the subject of the page.
+
+**❌ Bad:**
+
+In a guide to saving settings, with `settings` already introduced:
+
+```ts
+import { settings } from './settings';
+import { initializeApp } from './app';
+import { refreshTheme } from './theme';
+import { showNotification } from './notifications';
+
+async function updatePreferences() {
+  await initializeApp();
   await settings.save({ theme: 'dark' });
-  expect(settings.internalCache.size).toBe(1);
-  ```
+  refreshTheme();
+  showNotification('Settings saved');
+}
+```
 
-  **✅ Good:**
+**✅ Good:**
 
-  ```ts
-  await settings.save({ theme: 'dark' });
-  expect(await settings.load()).toEqual({ theme: 'dark' });
-  ```
+```ts
+import { settings } from './settings';
 
-- Make complete examples usable with the imports and setup they need. Mark
-  partial snippets clearly or rely on context already established on the page.
-  Do not repeat full setup around every snippet.
+await settings.save({ theme: 'dark' });
+```
 
-  **❌ Bad:**
+### Example setup
 
-  Presented as a complete example, with no earlier setup:
+Make complete examples usable with the imports and setup they need. Mark
+partial snippets clearly or rely on context already established on the page.
+Do not repeat full setup around every snippet.
 
-  ```ts
-  const client = createClient();
-  await client.upload('./report.csv');
-  ```
+**❌ Bad:**
 
-  **✅ Good:**
+Presented as a complete example, with no earlier setup:
 
-  > With the client created in the setup above, upload the report:
+```ts
+await client.upload('./report.csv');
+```
 
-  ```ts
-  await client.upload('./report.csv');
-  ```
+**✅ Good:**
 
-  This is explicitly a continuation. A standalone version would need the verified
-  public import and client configuration instead.
+```ts
+import { client } from './client';
 
-- Use public APIs in examples for users of a package. Internal import paths from
-  the package's tests are not automatically suitable for documentation.
+await client.upload('./report.csv');
+```
 
-  **❌ Bad:**
+### Snippet location
 
-  ```ts
-  import { createClient } from '../src/internal/client';
-  ```
+Show the filename when the snippet's location matters.
 
-  **✅ Good:**
+**✅ Example:**
 
-  ```ts
-  import { createClient } from 'example-client';
-  ```
+> Add the configuration to `example.config.ts` in the project root:
 
-  This assumes `createClient` is a verified public export of `example-client`.
-
-- Show the filename when the snippet's location matters.
-
-  **✅ Example:**
-
-  > Add the configuration to `example.config.ts` in the project root:
-
-  ```ts
-  export default { outputDir: './dist' };
-  ```
-
-## Accuracy and editing
-
-- Check technical claims and examples against relevant source, tests, or
-  authoritative documentation. Never invent defaults, options, requirements,
-  errors, or performance numbers to make prose more specific. Preserve meaningful
-  uncertainty and limits when simplifying language.
-
-  **❌ Bad:**
-
-  Editing “The client may retry failed requests” without verifying its behavior:
-
-  > The client retries every failed request three times.
-
-  **✅ Good:**
-
-  > The client may retry failed requests.
-
-  Keep the qualification until evidence supports a more precise statement.
-
-- Keep examples technically correct while simplifying them. Preserve required
-  waits, ordering, and setup; brevity does not justify a race or missing
-  prerequisite.
-
-  **❌ Bad:**
-
-  ```ts
-  await page.getByRole('button', { name: 'Save' }).click();
-  expect(await page.getByText('Saved').isVisible()).toBe(true);
-  ```
-
-  **✅ Good:**
-
-  ```ts
-  await page.getByRole('button', { name: 'Save' }).click();
-  await expect(page.getByText('Saved')).toBeVisible();
-  ```
-
-  Saving can finish after the click returns, so the assertion must wait for the
-  confirmation.
-
-- Keep edits within the requested scope and preserve the document's working
-  markup, metadata, and links.
-
-  **✅ Example:**
-
-  For “Simplify the wording in the installation guide,” edit its prose while
-  preserving frontmatter, code tabs, and heading anchors. Leave a proposed site
-  reorganization outside this wording change.
-
-- When changing headings or paths, update affected links and navigation.
-
-  **✅ Example:**
-
-  When renaming “Setup” to “Installation,” update links targeting the generated
-  `#setup` anchor to `#installation`, including links from other pages.
-
-- Use the project's applicable documentation checks. Verify changed code examples
-  against their API and behavior too; a successful site build does not prove that
-  examples work. Do not add package tests solely for editorial changes.
-
-  **✅ Example:**
-
-  After simplifying prose, run the required documentation checks. If you also
-  change a sample's event handling, verify its ordering against the implementation
-  and relevant tests, and run a focused behavior check where needed. A build that
-  renders the code block cannot detect a missed event.
-
-## Review before finishing
-
-- Review structure, deletion, language, and accuracy in that order. Check that the
-  document answers the reader's task, each paragraph adds useful information, the
-  wording is plain and connected, and edits preserve technical meaning. For a
-  review-only request, report concrete issues with suggested edits.
-
-  **✅ Example:**
-
-  > The paragraph after the configuration example repeats its option values.
-  > Replace it with “Paths are relative to the configuration file,” preserving
-  > the one detail the example does not show.
+```ts
+export default { outputDir: './dist' };
+```
