@@ -1,30 +1,120 @@
 # Agentic Dev
 
-Reusable instructions for coding agents.
+Reusable rules for coding agents.
 
-## Available rules
+- [Writing TypeScript](#writing-typescript)
+- [Writing Tests](#writing-tests)
+- [Writing Docs](#writing-docs)
+- [Writing AGENTS.md](#writing-agentsmd)
 
-- [Writing TypeScript](rules/writing-typescript/writing-typescript.md): Organize TypeScript source files, comments, and code for readability.
-- [Writing tests](rules/writing-tests/writing-tests.md): Write readable tests that verify observable behavior.
-- [Writing docs](rules/writing-docs/writing-docs.md): Write clear, useful documentation with accurate examples.
-- [Writing AGENTS.md](rules/writing-agents-md/writing-agents-md.md): Reusable sections to merge into a project's `AGENTS.md`, including planning guidance.
+## Rules
 
-## Install or update a consumer repository
+Run the commands for the rules you want from your project's root. Each rule has
+one command to download it and another to append its reference to `AGENTS.md`.
+Run the append command only once per rule; to update, rerun just the download
+command (which replaces local edits to the downloaded file).
 
-Give your coding agent this instruction from the consumer repository:
+### Writing TypeScript
 
-```text
-Install or update the applicable rules from https://github.com/vitalets/agentic-dev
-using the latest version on main.
+Organize TypeScript source files, comments, and code for readability.
 
-Copy the relevant rule files into .agents/rules/ and add or update references to
-them in the root AGENTS.md, creating it if needed. Merge relevant snippets from
-rules/writing-agents-md/writing-agents-md.md into AGENTS.md rather than copying that file wholesale.
-Use explicit loading instructions from those snippets: read the relevant rule
-before working on the relevant files, respect its scope, and check the changed
-files against it before finishing.
+Download:
 
-Preserve existing project-specific instructions and reconcile any local rule
-customizations with the upstream changes. Avoid duplicate sections or references.
-Review the resulting diff and summarize what changed.
+```sh
+mkdir -p .agents/rules
+curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-typescript.md \
+  -o .agents/rules/writing-typescript.md
 ```
+
+Append to `AGENTS.md`:
+
+```sh
+cat >> AGENTS.md <<'EOF'
+
+## Source file structure
+
+Before creating or editing TypeScript source files, read
+[the Writing TypeScript rule](.agents/rules/writing-typescript.md) and apply
+its scope rules. Before finishing, check the changed code against it.
+EOF
+```
+
+### Writing Tests
+
+Write readable tests that verify observable behavior.
+
+Download:
+
+```sh
+mkdir -p .agents/rules
+curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-tests.md \
+  -o .agents/rules/writing-tests.md
+```
+
+Append to `AGENTS.md`:
+
+```sh
+cat >> AGENTS.md <<'EOF'
+
+## Tests
+
+Before creating or editing test files, read and follow
+[the Writing Tests rule](.agents/rules/writing-tests.md).
+Before finishing, check the changed tests against it.
+EOF
+```
+
+### Writing Docs
+
+Write clear, useful documentation with accurate examples.
+
+Download:
+
+```sh
+mkdir -p .agents/rules
+curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-docs.md \
+  -o .agents/rules/writing-docs.md
+```
+
+Append to `AGENTS.md`:
+
+```sh
+cat >> AGENTS.md <<'EOF'
+
+## Documentation
+
+Before writing, editing, or reviewing documentation, read
+[the Writing Docs rule](.agents/rules/writing-docs.md) and apply its scope rules.
+Before finishing, check the changed documentation against it.
+EOF
+```
+
+### Writing AGENTS.md
+
+Opinionated examples of explicit rule references and planning guidance for agent instructions.
+
+Download:
+
+```sh
+mkdir -p .agents/rules
+curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-agents-md.md \
+  -o .agents/rules/writing-agents-md.md
+```
+
+Append to `AGENTS.md`:
+
+```sh
+cat >> AGENTS.md <<'EOF'
+
+## Agent instructions
+
+Before writing or reviewing `AGENTS.md`, read and follow
+[the Writing AGENTS.md rule](.agents/rules/writing-agents-md.md).
+Before finishing, check the changed instructions against it.
+EOF
+```
+
+## Contributing
+
+Edit files under `rules/`, following [the repository guidance](AGENTS.md).
+No build step is needed.

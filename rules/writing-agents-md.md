@@ -1,8 +1,15 @@
 # Writing AGENTS.md
 
-Use this guidance as a collection of reusable `AGENTS.md` sections. Copy and paste the relevant snippets into your repository's `AGENTS.md`, adapting them to its needs.
+Apply this guidance when writing or reviewing `AGENTS.md`. The sections below
+show this repository's preferred patterns for explicit rule loading and planning.
+
+The reference examples assume rules are stored in `.agents/rules/`. Adapt the
+paths if your project uses a different layout, and include only references to
+rules you have installed.
 
 ### Source file structure
+
+**Example:**
 
 ```md
 ## Source file structure
@@ -14,6 +21,8 @@ its scope rules. Before finishing, check the changed code against it.
 
 ### Tests
 
+**Example:**
+
 ```md
 ## Tests
 
@@ -24,6 +33,8 @@ Before finishing, check the changed tests against it.
 
 ### Documentation
 
+**Example:**
+
 ```md
 ## Documentation
 
@@ -33,6 +44,8 @@ Before finishing, check the changed documentation against it.
 ```
 
 ### Planning
+
+**Example:**
 
 ```md
 ## Planning
