@@ -4,6 +4,9 @@ This repository contains reusable instructions for coding agents. Write rules so
 agents can apply them consistently and reviewers can judge whether code follows
 them.
 
+Follow [Writing Docs](rules/writing-docs.md) when writing, editing, or reviewing
+this repository's documentation, including the rules themselves.
+
 ## Rule examples
 
 Always prefix example labels with emojis: **❌ Bad**, **✅ Good**, and **✅ Example**.
