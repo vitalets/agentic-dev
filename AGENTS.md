@@ -6,19 +6,21 @@ them.
 
 ## Rule examples
 
+Always prefix example labels with emojis: **❌ Bad**, **✅ Good**, and **✅ Example**.
+
 Except in `rules/writing-agents-md.md`, each rule bullet or numbered rule under `rules/` must include examples directly
-beneath that rule. Use paired **Bad** and **Good** examples when the contrast helps
-explain the rule. Use a single **Example** when showing the intended pattern is
+beneath that rule. Use paired **❌ Bad** and **✅ Good** examples when the contrast helps
+explain the rule. Use a single **✅ Example** when showing the intended pattern is
 enough, such as where to place helpers in a test file. Apply this requirement when
 adding or editing rules. Navigation lists and installation steps do not need examples.
 
-Keep `rules/writing-agents-md.md` concise: do not add **Bad**/**Good** or **Example**
+Keep `rules/writing-agents-md.md` concise: do not add **❌ Bad**/**✅ Good** or **✅ Example**
 blocks to its rules or reusable `AGENTS.md` snippets. Its reference snippets may remain.
 
-**Bad:** Add a workflow bullet to `rules/writing-agents-md.md` followed by
-**Bad**/**Good** sample responses.
+**❌ Bad:** Add a workflow bullet to `rules/writing-agents-md.md` followed by
+**❌ Bad**/**✅ Good** sample responses.
 
-**Good:** Add only the workflow bullet to `rules/writing-agents-md.md`.
+**✅ Good:** Add only the workflow bullet to `rules/writing-agents-md.md`.
 
 For paired examples, the bad example must demonstrate a violation of the specific
 rule. The good example must show the same scenario corrected, with unrelated
@@ -34,13 +36,13 @@ For example:
 
 - Name functions with verbs that describe their action.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   function total(items: Item[]) { ... }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   function calculateTotal(items: Item[]) { ... }
@@ -49,6 +51,6 @@ For example:
 ## Review
 
 Before finishing a rule change outside `rules/writing-agents-md.md`, verify that every added or edited rule has either
-a **Bad**/**Good** pair or a single **Example**, that the examples demonstrate the
+a **❌ Bad**/**✅ Good** pair or a single **✅ Example**, that the examples demonstrate the
 rule, and that they do not contradict other applicable rules. Keep matching
 guidance in installation instructions and reusable `AGENTS.md` snippets consistent.

@@ -14,7 +14,7 @@ These scope boundaries apply to all rules below.
 
 1. **File purpose** — start the file with a concise block comment describing the module’s overall purpose and boundaries. Do not list its exports or repeat documentation provided on individual exported members.
 
-   **Bad:**
+   **❌ Bad:**
 
    ```ts
    /**
@@ -22,7 +22,7 @@ These scope boundaries apply to all rules below.
     */
    ```
 
-   **Good:**
+   **✅ Good:**
 
    ```ts
    /**
@@ -51,7 +51,7 @@ These scope boundaries apply to all rules below.
   including existing comments. Reformat or
   rewrite these comments as needed, preserving their meaning and useful details.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   // Persists settings for the next application launch.
@@ -60,7 +60,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   /**
@@ -78,7 +78,7 @@ These scope boundaries apply to all rules below.
 
 - When a module centers on one exported class or function, document its purpose in the file-level comment and omit redundant documentation on that declaration. Supporting exports do not change this guidance. Keep declaration comments only when they add distinct, useful details.
 
-  **Example:**
+  **✅ Example:**
 
   ```ts
   /**
@@ -96,7 +96,7 @@ These scope boundaries apply to all rules below.
 
 - For types, internal functions and helpers, comment them only when their purpose, behavior, or role in the module is not obvious from the code and naming.
 
-  **Example:**
+  **✅ Example:**
 
   ```ts
   function getTotal(prices: number[]) {
@@ -113,7 +113,7 @@ These scope boundaries apply to all rules below.
 
 - Do not restate implementation details that are already clear from the code.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   /**
@@ -124,7 +124,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   /**
@@ -137,7 +137,7 @@ These scope boundaries apply to all rules below.
 
 - Do not add `@param` or `@returns` tags when TypeScript already expresses them.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   /**
@@ -150,7 +150,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   /**
@@ -165,7 +165,7 @@ These scope boundaries apply to all rules below.
 
 - Use simple, direct language. Keep important technical details; simplify the wording, not the content.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   /**
@@ -174,7 +174,7 @@ These scope boundaries apply to all rules below.
    */
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   /**
@@ -195,7 +195,7 @@ These scope boundaries apply to all rules below.
 
 - Omit explicit return type annotations on functions and methods unless TypeScript requires them. Rely on inference from the implementation to keep code simpler to review.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   function getTotal(prices: number[]): number {
@@ -203,7 +203,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   function getTotal(prices: number[]) {
@@ -217,7 +217,7 @@ These scope boundaries apply to all rules below.
 
 - **Prefer explicit function and method names:** Name functions and methods with verbs that describe their action. For example, prefer `getTotal` over `total`. Where practical, use specific verbs such as `find`, `save`, `remove`, or `create` rather than broad terms like `resolve`, `prepare`, or `process`. Make meaningful side effects visible, especially when a function or method both looks up and creates data. For example, prefer `findOrCreateStoredGroup` over `resolveLocalGroup`, and `saveGroupFromMatchingBindingHint` over `recognizeGroup`. General verbs are still reasonable when they accurately describe the function or method’s role, such as an event handler.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   async function resolveLocalGroup(name: string) {
@@ -225,7 +225,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   async function findOrCreateStoredGroup(name: string) {
@@ -237,7 +237,7 @@ These scope boundaries apply to all rules below.
 
 - **Simple control flow:** Keep branches and conditions easy to follow. Use optional chaining when it simplifies access.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   const theme = settings && settings.appearance
@@ -245,7 +245,7 @@ These scope boundaries apply to all rules below.
     : undefined;
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   const theme = settings?.appearance?.theme;
@@ -253,7 +253,7 @@ These scope boundaries apply to all rules below.
 
 - **Shallow nesting:** Prefer guard clauses and early returns. Extract meaningful operations when nested blocks obscure the main flow.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   async function saveIfChanged(settings: Settings | undefined, changed: boolean) {
@@ -265,7 +265,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   async function saveIfChanged(settings: Settings | undefined, changed: boolean) {
@@ -277,7 +277,7 @@ These scope boundaries apply to all rules below.
 
 - **Readable callbacks:** Avoid deeply nested callbacks. Use named helpers or `async`/`await` where appropriate without changing execution behavior.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   function refreshSettings() {
@@ -289,7 +289,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   async function refreshSettings() {
@@ -301,7 +301,7 @@ These scope boundaries apply to all rules below.
 
 - **Small parameter lists:** Keep inputs easy to understand at call sites. Group related inputs into a named object when that clarifies their meaning.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   function createPanel(width: number, height: number, title: string) {
@@ -311,7 +311,7 @@ These scope boundaries apply to all rules below.
   createPanel(320, 200, 'Settings');
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   type PanelOptions = { width: number; height: number; title: string };
@@ -325,7 +325,7 @@ These scope boundaries apply to all rules below.
 
 - **Focused functions:** Keep functions, methods, and callbacks concise and centered on a clear responsibility.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   async function saveSettings(settings: Settings) {
@@ -334,7 +334,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   async function saveSettings(settings: Settings) {
@@ -349,7 +349,7 @@ These scope boundaries apply to all rules below.
 
 - **Separate orchestration from implementation:** Functions and methods that coordinate a workflow should read as a sequence of meaningful steps. Extract the implementation details of those steps into named helpers, even when short or used only once. Keep straightforward assignments and control flow inline. Apply this when writing new code as well as refactoring.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   async function refreshSettings() {
@@ -359,7 +359,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   async function refreshSettings() {
@@ -377,13 +377,13 @@ These scope boundaries apply to all rules below.
 
 - **Readable lines:** Break long expressions at natural boundaries. Keep URLs intact and preserve existing body comments according to the commenting rules.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   const visibleItems = items.filter(item => item.enabled && item.category === selectedCategory).map(item => item.label);
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   const visibleItems = items
@@ -396,7 +396,7 @@ These scope boundaries apply to all rules below.
 
 - **Meaningful refactoring:** Preserve useful comments and whitespace. Avoid compressing code solely to make functions or files shorter. Extract helpers to communicate intent and keep a consistent level of abstraction, not merely to shorten code. Avoid helpers whose names add no meaning beyond the expressions they wrap.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   function findEnabledItems(items: Item[]) {
@@ -408,7 +408,7 @@ These scope boundaries apply to all rules below.
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   function findEnabledItems(items: Item[]) {

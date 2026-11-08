@@ -4,7 +4,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Keep test titles focused on the main behavior being tested. Use concise inline comments to explain secondary checks or distinct phases instead of listing every step in the title.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('saves settings, reloads them, and checks the theme', async () => {
@@ -12,7 +12,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('persists settings', async () => {
@@ -22,7 +22,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Write tests as straight-line sequences of plain instructions. Avoid loops, `if` statements, and other conditional logic unless explicitly requested by the user.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('checks blank strings', () => {
@@ -32,7 +32,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('checks blank strings', () => {
@@ -43,7 +43,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Prefer inline values over variables that force the reader to look up a value without making the test clearer.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('formats label', () => {
@@ -52,7 +52,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('formats label', () => {
@@ -62,7 +62,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Group similar small checks in one clearly named test when that is easier to read than separate tests with repetitive or lengthy titles. Split checks when they cover unrelated scenarios or make the test difficult to follow; do not enforce one behavior or assertion per test.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('recognizes an empty string as blank', () => {
@@ -73,7 +73,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('recognizes blank strings', () => {
@@ -84,7 +84,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - When test actions can be expressed through a meaningfully named helper, prefer extracting them over keeping their details in the test body. Hide irrelevant complexity.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('loads settings', () => {
@@ -93,7 +93,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('loads settings', () => {
@@ -108,7 +108,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Pass values important to the test as explicit helper parameters; do not silently set them inside the helper.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('loads settings', () => {
@@ -121,7 +121,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   }
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('loads settings', () => {
@@ -136,7 +136,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Keep a few small helpers specific to one test file at the bottom of that file. When helpers become numerous or lengthy enough to make the test file difficult to navigate, move them into a nearby helpers file.
 
-  **Example:**
+  **✅ Example:**
 
   ```ts
   test('loads settings', () => {
@@ -148,7 +148,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Place helpers shared across test files in a separate helpers file.
 
-  **Example:**
+  **✅ Example:**
 
   ```ts
   import { saveSettings } from './helpers';
@@ -161,7 +161,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - When asserting thrown errors, use a regular expression to match keywords that convey the error's meaning, rather than the entire message.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('rejects missing settings', () => {
@@ -169,7 +169,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('rejects missing settings', () => {
@@ -179,7 +179,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Test observable behavior at the highest practical level without slowing down the test suite. Avoid assertions on implementation details that are likely to change or difficult to understand.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('caches values', () => {
@@ -187,7 +187,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('caches values', () => {
@@ -197,7 +197,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Before adding a test, check whether an existing higher-level test already covers the behavior. If it does, avoid adding a redundant lower-level test unless it covers a distinct edge case or failure mode.
 
-  **Example:**
+  **✅ Example:**
 
   ```ts
   // Existing test.
@@ -213,7 +213,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Derive expected results independently from requirements or worked examples. Do not calculate them using the production code under test or duplicate its implementation in the assertion.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('calculates total', () => {
@@ -221,7 +221,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('calculates total', () => {
@@ -231,7 +231,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Prefer real collaborators. Mock external services or nondeterministic dependencies when needed, keeping internal behavior real. Prefer an understandable high-level behavior check over introducing mocks solely to isolate a specific defect.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('calculates total', () => {
@@ -240,7 +240,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('calculates total', () => {
@@ -251,7 +251,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - Assert calls, arguments, or ordering only when they are part of the observable contract.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('saves settings', async () => {
@@ -260,7 +260,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('saves settings', async () => {
@@ -271,7 +271,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
 
 - When test data values are arbitrary, prefer using neutral placeholders such as `foo`, `bar`, `baz` for strings, or 1, 2, 3 for numbers. Avoid values that describe the test scenario or imply meaning readers need to interpret; keep cognitive load minimal.
 
-  **Bad:**
+  **❌ Bad:**
 
   ```ts
   test('uppercases text', () => {
@@ -279,7 +279,7 @@ Tests should make it clear what is being tested as the reader reads them, withou
   });
   ```
 
-  **Good:**
+  **✅ Good:**
 
   ```ts
   test('uppercases text', () => {
