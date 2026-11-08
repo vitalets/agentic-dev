@@ -2,287 +2,317 @@
 
 Tests should make it clear what is being tested as the reader reads them, without requiring a dive into implementation details. All rules below support this guiding principle of readability.
 
-- Keep test titles focused on the main behavior being tested. Use concise inline comments to explain secondary checks or distinct phases instead of listing every step in the title.
+## Test titles
 
-  **❌ Bad:**
+Keep test titles focused on the main behavior being tested. Use concise inline comments to explain secondary checks or distinct phases instead of listing every step in the title.
 
-  ```ts
-  test('saves settings, reloads them, and checks the theme', async () => {
-    // ...
-  });
-  ```
+**❌ Bad:**
 
-  **✅ Good:**
+```ts
+test('saves settings, reloads them, and checks the theme', async () => {
+  // ...
+});
+```
 
-  ```ts
-  test('persists settings', async () => {
-    // ...
-  });
-  ```
+**✅ Good:**
 
-- Write tests as straight-line sequences of plain instructions. Avoid loops, `if` statements, and other conditional logic unless explicitly requested by the user.
+```ts
+test('persists settings', async () => {
+  // ...
+});
+```
 
-  **❌ Bad:**
+## Control flow
 
-  ```ts
-  test('checks blank strings', () => {
-    for (const value of ['', ' ']) {
-      expect(isBlank(value)).toBe(true);
-    }
-  });
-  ```
+Write tests as straight-line sequences of plain instructions. Avoid loops, `if` statements, and other conditional logic unless explicitly requested by the user.
 
-  **✅ Good:**
+**❌ Bad:**
 
-  ```ts
-  test('checks blank strings', () => {
-    expect(isBlank('')).toBe(true);
-    expect(isBlank(' ')).toBe(true);
-  });
-  ```
-
-- Prefer inline values over variables that force the reader to look up a value without making the test clearer.
-
-  **❌ Bad:**
-
-  ```ts
-  test('formats label', () => {
-    const value = 'foo';
-    expect(formatLabel(value)).toBe('FOO');
-  });
-  ```
-
-  **✅ Good:**
-
-  ```ts
-  test('formats label', () => {
-    expect(formatLabel('foo')).toBe('FOO');
-  });
-  ```
-
-- Group similar small checks in one clearly named test when that is easier to read than separate tests with repetitive or lengthy titles. Split checks when they cover unrelated scenarios or make the test difficult to follow; do not enforce one behavior or assertion per test.
-
-  **❌ Bad:**
-
-  ```ts
-  test('recognizes an empty string as blank', () => {
-    expect(isBlank('')).toBe(true);
-  });
-  test('recognizes a space as blank', () => {
-    expect(isBlank(' ')).toBe(true);
-  });
-  ```
-
-  **✅ Good:**
-
-  ```ts
-  test('recognizes blank strings', () => {
-    expect(isBlank('')).toBe(true);
-    expect(isBlank(' ')).toBe(true);
-  });
-  ```
-
-- When test actions can be expressed through a meaningfully named helper, prefer extracting them over keeping their details in the test body. Hide irrelevant complexity.
-
-  **❌ Bad:**
-
-  ```ts
-  test('loads settings', () => {
-    localStorage.setItem('settings', JSON.stringify({ theme: 'dark' }));
-    // ...
-  });
-  ```
-
-  **✅ Good:**
-
-  ```ts
-  test('loads settings', () => {
-    saveSettings({ theme: 'dark' });
-    // ...
-  });
-
-  function saveSettings(settings: Settings) {
-    localStorage.setItem('settings', JSON.stringify(settings));
+```ts
+test('checks blank strings', () => {
+  for (const value of ['', ' ']) {
+    expect(isBlank(value)).toBe(true);
   }
-  ```
+});
+```
 
-- Pass values important to the test as explicit helper parameters; do not silently set them inside the helper.
+**✅ Good:**
 
-  **❌ Bad:**
+```ts
+test('checks blank strings', () => {
+  expect(isBlank('')).toBe(true);
+  expect(isBlank(' ')).toBe(true);
+});
+```
 
-  ```ts
-  test('loads settings', () => {
-    saveSettings();
-    expect(loadSettings().theme).toBe('dark');
-  });
+## Inline values
 
-  function saveSettings() {
-    localStorage.setItem('settings', JSON.stringify({ theme: 'dark' }));
-  }
-  ```
+Prefer inline values over variables that force the reader to look up a value without making the test clearer.
 
-  **✅ Good:**
+**❌ Bad:**
 
-  ```ts
-  test('loads settings', () => {
-    saveSettings({ theme: 'dark' });
-    expect(loadSettings().theme).toBe('dark');
-  });
+```ts
+test('formats label', () => {
+  const value = 'foo';
+  expect(formatLabel(value)).toBe('FOO');
+});
+```
 
-  function saveSettings(settings: Settings) {
-    localStorage.setItem('settings', JSON.stringify(settings));
-  }
-  ```
+**✅ Good:**
 
-- Keep a few small helpers specific to one test file at the bottom of that file. When helpers become numerous or lengthy enough to make the test file difficult to navigate, move them into a nearby helpers file.
+```ts
+test('formats label', () => {
+  expect(formatLabel('foo')).toBe('FOO');
+});
+```
 
-  **✅ Example:**
+## Related checks
 
-  ```ts
-  test('loads settings', () => {
-    // ...
-  });
+Group similar small checks in one clearly named test when that is easier to read than separate tests with repetitive or lengthy titles. Split checks when they cover unrelated scenarios or make the test difficult to follow; do not enforce one behavior or assertion per test.
 
-  function createSettings() { /* ... */ }
-  ```
+**❌ Bad:**
 
-- Place helpers shared across test files in a separate helpers file.
+```ts
+test('recognizes an empty string as blank', () => {
+  expect(isBlank('')).toBe(true);
+});
+test('recognizes a space as blank', () => {
+  expect(isBlank(' ')).toBe(true);
+});
+```
 
-  **✅ Example:**
+**✅ Good:**
 
-  ```ts
-  import { saveSettings } from './helpers';
+```ts
+test('recognizes blank strings', () => {
+  expect(isBlank('')).toBe(true);
+  expect(isBlank(' ')).toBe(true);
+});
+```
 
-  test('loads settings', () => {
-    saveSettings({ theme: 'dark' });
-    // ...
-  });
-  ```
+## Helper extraction
 
-- When asserting thrown errors, use a regular expression to match keywords that convey the error's meaning, rather than the entire message.
+When test actions can be expressed through a meaningfully named helper, prefer extracting them over keeping their details in the test body. Hide irrelevant complexity.
 
-  **❌ Bad:**
+**❌ Bad:**
 
-  ```ts
-  test('rejects missing settings', () => {
-    expect(() => loadSettings()).toThrow('Settings file could not be found at /tmp/settings.json.');
-  });
-  ```
+```ts
+test('loads settings', () => {
+  localStorage.setItem('settings', JSON.stringify({ theme: 'dark' }));
+  // ...
+});
+```
 
-  **✅ Good:**
+**✅ Good:**
 
-  ```ts
-  test('rejects missing settings', () => {
-    expect(() => loadSettings()).toThrow(/could not be found/);
-  });
-  ```
+```ts
+test('loads settings', () => {
+  saveSettings({ theme: 'dark' });
+  // ...
+});
 
-- Test observable behavior at the highest practical level without slowing down the test suite. Avoid assertions on implementation details that are likely to change or difficult to understand.
+function saveSettings(settings: Settings) {
+  localStorage.setItem('settings', JSON.stringify(settings));
+}
+```
 
-  **❌ Bad:**
+## Helper parameters
 
-  ```ts
-  test('caches values', () => {
-    expect(cache.entries.size).toBe(1);
-  });
-  ```
+Pass values important to the test as explicit helper parameters; do not silently set them inside the helper.
 
-  **✅ Good:**
+**❌ Bad:**
 
-  ```ts
-  test('caches values', () => {
-    expect(cache.get('foo')).toBe('bar');
-  });
-  ```
+```ts
+test('loads settings', () => {
+  saveSettings();
+  expect(loadSettings().theme).toBe('dark');
+});
 
-- Before adding a test, check whether an existing higher-level test already covers the behavior. If it does, avoid adding a redundant lower-level test unless it covers a distinct edge case or failure mode.
+function saveSettings() {
+  localStorage.setItem('settings', JSON.stringify({ theme: 'dark' }));
+}
+```
 
-  **✅ Example:**
+**✅ Good:**
 
-  ```ts
-  // Existing test.
-  test('applies discount', () => {
-    expect(checkout({ subtotal: 100, discountPercent: 10 }).total).toBe(90);
-  });
+```ts
+test('loads settings', () => {
+  saveSettings({ theme: 'dark' });
+  expect(loadSettings().theme).toBe('dark');
+});
 
-  // Redundant addition.
-  test('calculates discount', () => {
-    expect(calculateDiscount(100, 10)).toBe(10);
-  });
-  ```
+function saveSettings(settings: Settings) {
+  localStorage.setItem('settings', JSON.stringify(settings));
+}
+```
 
-- Derive expected results independently from requirements or worked examples. Do not calculate them using the production code under test or duplicate its implementation in the assertion.
+## Local helpers
 
-  **❌ Bad:**
+Keep a few small helpers specific to one test file at the bottom of that file. When helpers become numerous or lengthy enough to make the test file difficult to navigate, move them into a nearby helpers file.
 
-  ```ts
-  test('calculates total', () => {
-    expect(calculateTotal(order)).toBe(calculateSubtotal(order) + calculateTax(order));
-  });
-  ```
+**✅ Example:**
 
-  **✅ Good:**
+```ts
+test('loads settings', () => {
+  // ...
+});
 
-  ```ts
-  test('calculates total', () => {
-    expect(calculateTotal(order)).toBe(120);
-  });
-  ```
+function createSettings() { /* ... */ }
+```
 
-- Prefer real collaborators. Mock external services or nondeterministic dependencies when needed, keeping internal behavior real. Prefer an understandable high-level behavior check over introducing mocks solely to isolate a specific defect.
+## Shared helpers
 
-  **❌ Bad:**
+Place helpers shared across test files in a separate helpers file.
 
-  ```ts
-  test('calculates total', () => {
-    vi.spyOn(cart, 'calculateTotal').mockReturnValue(3);
-    expect(cart.calculateTotal()).toBe(3);
-  });
-  ```
+**✅ Example:**
 
-  **✅ Good:**
+```ts
+import { saveSettings } from './helpers';
 
-  ```ts
-  test('calculates total', () => {
-    cart.addItem({ price: 1, quantity: 3 });
-    expect(cart.calculateTotal()).toBe(3);
-  });
-  ```
+test('loads settings', () => {
+  saveSettings({ theme: 'dark' });
+  // ...
+});
+```
 
-- Assert calls, arguments, or ordering only when they are part of the observable contract.
+## Error matching
 
-  **❌ Bad:**
+When asserting thrown errors, use a regular expression to match keywords that convey the error's meaning, rather than the entire message.
 
-  ```ts
-  test('saves settings', async () => {
-    await saveSettings({ theme: 'dark' });
-    expect(serializer.serialize).toHaveBeenCalledWith({ theme: 'dark' });
-  });
-  ```
+**❌ Bad:**
 
-  **✅ Good:**
+```ts
+test('rejects missing settings', () => {
+  expect(() => loadSettings()).toThrow('Settings file could not be found at /tmp/settings.json.');
+});
+```
 
-  ```ts
-  test('saves settings', async () => {
-    await saveSettings({ theme: 'dark' });
-    expect(await loadSettings()).toEqual({ theme: 'dark' });
-  });
-  ```
+**✅ Good:**
 
-- When test data values are arbitrary, prefer using neutral placeholders such as `foo`, `bar`, `baz` for strings, or 1, 2, 3 for numbers. Avoid values that describe the test scenario or imply meaning readers need to interpret; keep cognitive load minimal.
+```ts
+test('rejects missing settings', () => {
+  expect(() => loadSettings()).toThrow(/could not be found/);
+});
+```
 
-  **❌ Bad:**
+## Observable behavior
 
-  ```ts
-  test('uppercases text', () => {
-    expect(toUpperCase('settings storage key')).toBe('SETTINGS STORAGE KEY');
-  });
-  ```
+Test observable behavior at the highest practical level without slowing down the test suite. Avoid assertions on implementation details that are likely to change or difficult to understand.
 
-  **✅ Good:**
+**❌ Bad:**
 
-  ```ts
-  test('uppercases text', () => {
-    expect(toUpperCase('foo')).toBe('FOO');
-  });
-  ```
+```ts
+test('caches values', () => {
+  expect(cache.entries.size).toBe(1);
+});
+```
+
+**✅ Good:**
+
+```ts
+test('caches values', () => {
+  expect(cache.get('foo')).toBe('bar');
+});
+```
+
+## Existing coverage
+
+Before adding a test, check whether an existing higher-level test already covers the behavior. If it does, avoid adding a redundant lower-level test unless it covers a distinct edge case or failure mode.
+
+**✅ Example:**
+
+```ts
+// Existing test.
+test('applies discount', () => {
+  expect(checkout({ subtotal: 100, discountPercent: 10 }).total).toBe(90);
+});
+
+// Redundant addition.
+test('calculates discount', () => {
+  expect(calculateDiscount(100, 10)).toBe(10);
+});
+```
+
+## Expected results
+
+Derive expected results independently from requirements or worked examples. Do not calculate them using the production code under test or duplicate its implementation in the assertion.
+
+**❌ Bad:**
+
+```ts
+test('calculates total', () => {
+  expect(calculateTotal(order)).toBe(calculateSubtotal(order) + calculateTax(order));
+});
+```
+
+**✅ Good:**
+
+```ts
+test('calculates total', () => {
+  expect(calculateTotal(order)).toBe(120);
+});
+```
+
+## Mocks and collaborators
+
+Prefer real collaborators. Mock external services or nondeterministic dependencies when needed, keeping internal behavior real. Prefer an understandable high-level behavior check over introducing mocks solely to isolate a specific defect.
+
+**❌ Bad:**
+
+```ts
+test('calculates total', () => {
+  vi.spyOn(cart, 'calculateTotal').mockReturnValue(3);
+  expect(cart.calculateTotal()).toBe(3);
+});
+```
+
+**✅ Good:**
+
+```ts
+test('calculates total', () => {
+  cart.addItem({ price: 1, quantity: 3 });
+  expect(cart.calculateTotal()).toBe(3);
+});
+```
+
+## Interaction assertions
+
+Assert calls, arguments, or ordering only when they are part of the observable contract.
+
+**❌ Bad:**
+
+```ts
+test('saves settings', async () => {
+  await saveSettings({ theme: 'dark' });
+  expect(serializer.serialize).toHaveBeenCalledWith({ theme: 'dark' });
+});
+```
+
+**✅ Good:**
+
+```ts
+test('saves settings', async () => {
+  await saveSettings({ theme: 'dark' });
+  expect(await loadSettings()).toEqual({ theme: 'dark' });
+});
+```
+
+## Test data
+
+When test data values are arbitrary, prefer using neutral placeholders such as `foo`, `bar`, `baz` for strings, or 1, 2, 3 for numbers. Avoid values that describe the test scenario or imply meaning readers need to interpret; keep cognitive load minimal.
+
+**❌ Bad:**
+
+```ts
+test('uppercases text', () => {
+  expect(toUpperCase('settings storage key')).toBe('SETTINGS STORAGE KEY');
+});
+```
+
+**✅ Good:**
+
+```ts
+test('uppercases text', () => {
+  expect(toUpperCase('foo')).toBe('FOO');
+});
+```
