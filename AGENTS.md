@@ -8,11 +8,12 @@ them.
 
 Always prefix example labels with emojis: **❌ Bad**, **✅ Good**, and **✅ Example**.
 
-Except in `rules/writing-agents-md.md`, each rule bullet or numbered rule under `rules/` must include examples directly
-beneath that rule. Use paired **❌ Bad** and **✅ Good** examples when the contrast helps
-explain the rule. Use a single **✅ Example** when showing the intended pattern is
-enough, such as where to place helpers in a test file. Apply this requirement when
-adding or editing rules. Navigation lists and installation steps do not need examples.
+When adding or editing rules under `rules/`, include examples where they help
+readers understand or apply the guidance. Omit examples that merely repeat clear
+instructions, scope definitions, or patterns already shown inline. Not every rule
+needs an example. Place useful examples directly beneath the relevant rule: use
+paired **❌ Bad** and **✅ Good** examples when the contrast clarifies the rule, or
+a single **✅ Example** when showing the intended pattern is enough.
 
 Keep `rules/writing-agents-md.md` concise: do not add **❌ Bad**/**✅ Good** or **✅ Example**
 blocks to its rules or reusable `AGENTS.md` snippets. Its reference snippets may remain.
@@ -28,9 +29,9 @@ details kept the same. Keep examples short and realistic, using code blocks for 
 and sample requests or responses for interaction guidance. Explain briefly why
 each example violates or satisfies the rule when the distinction is not obvious.
 
-For rules with exceptions or judgment calls, choose examples that clarify the
-boundary. Split a bullet containing independent requirements when one example
-or pair cannot demonstrate them clearly.
+For rules with exceptions or judgment calls, prefer examples that clarify the
+boundary. Split independent requirements when doing so makes the guidance easier
+to understand.
 
 For example:
 
@@ -50,7 +51,7 @@ For example:
 
 ## Review
 
-Before finishing a rule change outside `rules/writing-agents-md.md`, verify that every added or edited rule has either
-a **❌ Bad**/**✅ Good** pair or a single **✅ Example**, that the examples demonstrate the
-rule, and that they do not contradict other applicable rules. Keep matching
-guidance in installation instructions and reusable `AGENTS.md` snippets consistent.
+Before finishing a rule change, check whether examples would clarify any ambiguous
+guidance. Verify that included examples add useful information, demonstrate the
+rule, and do not contradict other applicable rules. Keep matching guidance in
+installation instructions and reusable `AGENTS.md` snippets consistent.
