@@ -8,6 +8,8 @@ show this repository's preferred patterns for explicit rule loading and planning
 ```md
 ## Workflow
 
+- Evaluate the user's proposals objectively, weighing benefits and drawbacks. Disagree respectfully when the evidence or reasoning warrants it, and explain why.
+
 - When the user asks for a plan, do not edit files until they explicitly ask to implement it.
 Treat follow-up additions and corrections as updates to the plan, not permission to implement.
 ```
