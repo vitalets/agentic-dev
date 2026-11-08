@@ -14,9 +14,8 @@ rules you have installed.
 ```md
 ## Source file structure
 
-Before creating or editing TypeScript source files, read
-[the Writing TypeScript rule](.agents/rules/writing-typescript.md) and apply
-its scope rules. Before finishing, check the changed code against it.
+When creating or editing TypeScript source files, follow
+[the Writing TypeScript rule](.agents/rules/writing-typescript.md).
 ```
 
 ### Tests
@@ -26,9 +25,8 @@ its scope rules. Before finishing, check the changed code against it.
 ```md
 ## Tests
 
-Before creating or editing test files, read and follow
+When creating or editing test files, follow
 [the Writing Tests rule](.agents/rules/writing-tests.md).
-Before finishing, check the changed tests against it.
 ```
 
 ### Documentation
@@ -38,9 +36,8 @@ Before finishing, check the changed tests against it.
 ```md
 ## Documentation
 
-Before writing, editing, or reviewing documentation, read
-[the Writing Docs rule](.agents/rules/writing-docs.md) and apply its scope rules.
-Before finishing, check the changed documentation against it.
+When writing, editing, or reviewing documentation, follow
+[the Writing Docs rule](.agents/rules/writing-docs.md).
 ```
 
 ### Planning

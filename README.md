@@ -1,24 +1,19 @@
 # Agentic Dev
 
-Reusable rules for coding agents.
+Opinionated rules for coding agents for writing readable and maintainable code, tests, and documentation.
+
+## Rules
 
 - [Writing TypeScript](#writing-typescript)
 - [Writing Tests](#writing-tests)
 - [Writing Docs](#writing-docs)
 - [Writing AGENTS.md](#writing-agentsmd)
 
-## Rules
-
-Run the commands for the rules you want from your project's root. Each rule has
-one command to download it and another to append its reference to `AGENTS.md`.
-Run the append command only once per rule; to update, rerun just the download
-command (which replaces local edits to the downloaded file).
-
 ### Writing TypeScript
 
-Organize TypeScript source files, comments, and code for readability.
+Organize your TypeScript source files to make code easier to read and maintain.
 
-Download:
+Install to `.agents/rules`:
 
 ```sh
 mkdir -p .agents/rules
@@ -26,24 +21,25 @@ curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/wri
   -o .agents/rules/writing-typescript.md
 ```
 
+> [!TIP]
+> Check your coding agent’s documentation for its supported rules location and
+> adjust the paths as needed.
+
 Append to `AGENTS.md`:
 
-```sh
-cat >> AGENTS.md <<'EOF'
+```markdown
+## Writing TypeScript
 
-## Source file structure
-
-Before creating or editing TypeScript source files, read
-[the Writing TypeScript rule](.agents/rules/writing-typescript.md) and apply
-its scope rules. Before finishing, check the changed code against it.
-EOF
+When creating or editing TypeScript source files, follow
+[the Writing TypeScript rule](.agents/rules/writing-typescript.md).
 ```
 
 ### Writing Tests
 
-Write readable tests that verify observable behavior.
+Write tests that clearly show the behavior being
+verified, with simple steps and assertions.
 
-Download:
+Install to `.agents/rules`:
 
 ```sh
 mkdir -p .agents/rules
@@ -51,24 +47,24 @@ curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/wri
   -o .agents/rules/writing-tests.md
 ```
 
+> [!TIP]
+> Check your coding agent’s documentation for its supported rules location and
+> adjust the paths as needed.
+
 Append to `AGENTS.md`:
 
-```sh
-cat >> AGENTS.md <<'EOF'
-
+```markdown
 ## Tests
 
-Before creating or editing test files, read and follow
+When creating or editing test files, follow
 [the Writing Tests rule](.agents/rules/writing-tests.md).
-Before finishing, check the changed tests against it.
-EOF
 ```
 
 ### Writing Docs
 
-Write clear, useful documentation with accurate examples.
+Write clear and readable documentation for humans.
 
-Download:
+Install to `.agents/rules`:
 
 ```sh
 mkdir -p .agents/rules
@@ -76,24 +72,24 @@ curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/wri
   -o .agents/rules/writing-docs.md
 ```
 
+> [!TIP]
+> Check your coding agent’s documentation for its supported rules location and
+> adjust the paths as needed.
+
 Append to `AGENTS.md`:
 
-```sh
-cat >> AGENTS.md <<'EOF'
-
+```markdown
 ## Documentation
 
-Before writing, editing, or reviewing documentation, read
-[the Writing Docs rule](.agents/rules/writing-docs.md) and apply its scope rules.
-Before finishing, check the changed documentation against it.
-EOF
+When writing, editing, or reviewing documentation, follow
+[the Writing Docs rule](.agents/rules/writing-docs.md).
 ```
 
 ### Writing AGENTS.md
 
-Opinionated examples of explicit rule references and planning guidance for agent instructions.
+Write good `AGENTS.md` for you agents.
 
-Download:
+Install to `.agents/rules`:
 
 ```sh
 mkdir -p .agents/rules
@@ -101,18 +97,9 @@ curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/wri
   -o .agents/rules/writing-agents-md.md
 ```
 
-Append to `AGENTS.md`:
-
-```sh
-cat >> AGENTS.md <<'EOF'
-
-## Agent instructions
-
-Before writing or reviewing `AGENTS.md`, read and follow
-[the Writing AGENTS.md rule](.agents/rules/writing-agents-md.md).
-Before finishing, check the changed instructions against it.
-EOF
-```
+> [!TIP]
+> Check your coding agent’s documentation for its supported rules location and
+> adjust the paths as needed.
 
 ## Contributing
 
