@@ -16,14 +16,16 @@ Organize your TypeScript source files to make code easier to read and maintain.
 Install to `.agents/rules`:
 
 ```sh
-mkdir -p .agents/rules
+RULES_DIR=".agents/rules"
+mkdir -p "$RULES_DIR"
 curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-typescript.md \
-  -o .agents/rules/writing-typescript.md
+  -o "$RULES_DIR/writing-typescript.md"
 ```
 
 > [!TIP]
-> Check your coding agent’s documentation for its supported rules location and
-> adjust the paths as needed.
+> Check your coding agent’s documentation for its supported rules location.
+> To use a different directory, change `RULES_DIR` above and update any rule
+> links in `AGENTS.md` to match.
 
 Append to `AGENTS.md`:
 
@@ -42,14 +44,16 @@ verified, with simple steps and assertions.
 Install to `.agents/rules`:
 
 ```sh
-mkdir -p .agents/rules
+RULES_DIR=".agents/rules"
+mkdir -p "$RULES_DIR"
 curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-tests.md \
-  -o .agents/rules/writing-tests.md
+  -o "$RULES_DIR/writing-tests.md"
 ```
 
 > [!TIP]
-> Check your coding agent’s documentation for its supported rules location and
-> adjust the paths as needed.
+> Check your coding agent’s documentation for its supported rules location.
+> To use a different directory, change `RULES_DIR` above and update any rule
+> links in `AGENTS.md` to match.
 
 Append to `AGENTS.md`:
 
@@ -67,14 +71,16 @@ Write clear and readable documentation for humans.
 Install to `.agents/rules`:
 
 ```sh
-mkdir -p .agents/rules
+RULES_DIR=".agents/rules"
+mkdir -p "$RULES_DIR"
 curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-docs.md \
-  -o .agents/rules/writing-docs.md
+  -o "$RULES_DIR/writing-docs.md"
 ```
 
 > [!TIP]
-> Check your coding agent’s documentation for its supported rules location and
-> adjust the paths as needed.
+> Check your coding agent’s documentation for its supported rules location.
+> To use a different directory, change `RULES_DIR` above and update any rule
+> links in `AGENTS.md` to match.
 
 Append to `AGENTS.md`:
 
@@ -92,14 +98,16 @@ Write good `AGENTS.md` for you agents.
 Install to `.agents/rules`:
 
 ```sh
-mkdir -p .agents/rules
+RULES_DIR=".agents/rules"
+mkdir -p "$RULES_DIR"
 curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-agents-md.md \
-  -o .agents/rules/writing-agents-md.md
+  -o "$RULES_DIR/writing-agents-md.md"
 ```
 
 > [!TIP]
-> Check your coding agent’s documentation for its supported rules location and
-> adjust the paths as needed.
+> Check your coding agent’s documentation for its supported rules location.
+> To use a different directory, change `RULES_DIR` above and update any rule
+> links in `AGENTS.md` to match.
 
 ## Contributing
 
