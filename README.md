@@ -12,7 +12,7 @@ Opinionated rules for coding agents.
 Browse the rules below and install them individually as needed.
 
 > [!TIP]
-> By default, rules install to `.agents/rules`. If your coding agent uses a different
+> By default, all rules install to `.agents/rules`. If your coding agent uses a different
 > location, update `RULES_DIR` below and the rule links in `AGENTS.md` to match.
 
 ### Writing TypeScript
