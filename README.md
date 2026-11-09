@@ -1,30 +1,11 @@
 # Agentic Dev
 
-Opinionated rules that help coding agents write readable and maintainable code, tests, and documentation.
+Opinionated rules for coding agents.
 
 - [Writing TypeScript](#writing-typescript)
 - [Writing Tests](#writing-tests)
 - [Writing Docs](#writing-docs)
 - [Writing AGENTS.md](#writing-agentsmd)
-
-## Install All Rules
-
-Run this script from your project's root to install or update all rules:
-
-```sh
-RULES_DIR=".agents/rules"
-
-mkdir -p "$RULES_DIR"
-for rule in \
-  writing-typescript \
-  writing-tests \
-  writing-docs \
-  writing-agents-md
-do
-  curl -fsSL "https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/$rule.md" \
-    -o "$RULES_DIR/$rule.md" || break
-done
-```
 
 ## Rules
 
@@ -33,6 +14,8 @@ Browse the rules below and install them individually as needed.
 ### Writing TypeScript
 
 Organize your TypeScript source files to make code easier to read and maintain.
+
+[Rule source](rules/writing-typescript.md).
 
 Install to `.agents/rules`:
 
@@ -62,6 +45,8 @@ When creating or editing TypeScript source files, follow
 Write tests that clearly show the behavior being
 verified, with simple steps and assertions.
 
+[Rule source](rules/writing-tests.md).
+
 Install to `.agents/rules`:
 
 ```sh
@@ -88,6 +73,8 @@ When creating or editing test files, follow
 ### Writing Docs
 
 Write clear and readable documentation for humans.
+
+[Rule source](rules/writing-docs.md).
 
 Install to `.agents/rules`:
 
@@ -116,6 +103,8 @@ When writing, editing, or reviewing documentation, follow
 
 Write clear `AGENTS.md` instructions for your agents.
 
+[Rule source](rules/writing-agents-md.md).
+
 Install to `.agents/rules`:
 
 ```sh
@@ -129,6 +118,25 @@ curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/wri
 > Check your coding agent’s documentation for its supported rules location.
 > To use a different directory, change `RULES_DIR` above and update any rule
 > links in `AGENTS.md` to match.
+
+## Install All Rules
+
+Run this script from your project's root to install or update all rules:
+
+```sh
+RULES_DIR=".agents/rules"
+
+mkdir -p "$RULES_DIR"
+for rule in \
+  writing-typescript \
+  writing-tests \
+  writing-docs \
+  writing-agents-md
+do
+  curl -fsSL "https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/$rule.md" \
+    -o "$RULES_DIR/$rule.md" || break
+done
+```
 
 ## Contributing
 
