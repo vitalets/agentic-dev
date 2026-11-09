@@ -11,6 +11,10 @@ Opinionated rules for coding agents.
 
 Browse the rules below and install them individually as needed.
 
+> [!TIP]
+> By default, rules install to `.agents/rules`. If your coding agent uses a different
+> location, update `RULES_DIR` below and the rule links in `AGENTS.md` to match.
+
 ### Writing TypeScript
 
 Organize your TypeScript source files to make code easier to read and maintain.
@@ -25,11 +29,6 @@ mkdir -p "$RULES_DIR"
 curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-typescript.md \
   -o "$RULES_DIR/writing-typescript.md"
 ```
-
-> [!TIP]
-> Check your coding agent’s documentation for its supported rules location.
-> To use a different directory, change `RULES_DIR` above and update any rule
-> links in `AGENTS.md` to match.
 
 Append to `AGENTS.md`:
 
@@ -56,11 +55,6 @@ curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/wri
   -o "$RULES_DIR/writing-tests.md"
 ```
 
-> [!TIP]
-> Check your coding agent’s documentation for its supported rules location.
-> To use a different directory, change `RULES_DIR` above and update any rule
-> links in `AGENTS.md` to match.
-
 Append to `AGENTS.md`:
 
 ```markdown
@@ -85,11 +79,6 @@ curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/wri
   -o "$RULES_DIR/writing-docs.md"
 ```
 
-> [!TIP]
-> Check your coding agent’s documentation for its supported rules location.
-> To use a different directory, change `RULES_DIR` above and update any rule
-> links in `AGENTS.md` to match.
-
 Append to `AGENTS.md`:
 
 ```markdown
@@ -113,11 +102,6 @@ mkdir -p "$RULES_DIR"
 curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-agents-md.md \
   -o "$RULES_DIR/writing-agents-md.md"
 ```
-
-> [!TIP]
-> Check your coding agent’s documentation for its supported rules location.
-> To use a different directory, change `RULES_DIR` above and update any rule
-> links in `AGENTS.md` to match.
 
 ## Install All Rules
 
