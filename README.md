@@ -42,6 +42,12 @@ When creating or editing TypeScript source files, follow
 the [Writing TypeScript rule](.agents/rules/writing-typescript.md).
 ```
 
+To review an existing codebase after installing or updating this rule, use this prompt:
+
+```text
+Review the existing codebase for compliance with the current Writing TypeScript rule. Report violations and suggest fixes.
+```
+
 ### Writing Tests
 
 Write tests that human can read.
@@ -66,6 +72,12 @@ When creating or editing test files, follow
 the [Writing Tests rule](.agents/rules/writing-tests.md).
 ```
 
+To review an existing codebase after installing or updating this rule, use this prompt:
+
+```text
+Review the existing codebase for compliance with the current Writing Tests rule. Report violations and suggest fixes.
+```
+
 ### Writing Docs
 
 Write concise and readable documentation for humans.
@@ -88,6 +100,12 @@ Append to `AGENTS.md`:
 
 When writing, editing, or reviewing documentation, follow
 the [Writing Docs rule](.agents/rules/writing-docs.md).
+```
+
+To review an existing codebase after installing or updating this rule, use this prompt:
+
+```text
+Review the existing codebase for compliance with the current Writing Docs rule. Report violations and suggest fixes.
 ```
 
 ## Install All Rules
