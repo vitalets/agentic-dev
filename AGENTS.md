@@ -18,13 +18,13 @@ needs an example. Place useful examples directly beneath the relevant rule: use
 paired **❌ Bad** and **✅ Good** examples when the contrast clarifies the rule, or
 a single **✅ Example** when showing the intended pattern is enough.
 
-Keep `rules/writing-agents-md.md` concise: do not add **❌ Bad**/**✅ Good** or **✅ Example**
-blocks to its rules or reusable `AGENTS.md` snippets. Its reference snippets may remain.
+Keep `templates/agents-md.md` concise: do not add **❌ Bad**/**✅ Good** or **✅ Example**
+blocks to its reusable `AGENTS.md` snippets. Its reference snippets may remain.
 
-**❌ Bad:** Add a workflow bullet to `rules/writing-agents-md.md` followed by
+**❌ Bad:** Add a workflow bullet to `templates/agents-md.md` followed by
 **❌ Bad**/**✅ Good** sample responses.
 
-**✅ Good:** Add only the workflow bullet to `rules/writing-agents-md.md`.
+**✅ Good:** Add only the workflow bullet to `templates/agents-md.md`.
 
 For paired examples, the bad example must demonstrate a violation of the specific
 rule. The good example must show the same scenario corrected, with unrelated

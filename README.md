@@ -1,23 +1,25 @@
 # Agentic Dev
 
-Opinionated rules for coding agents.
+Opinionated rules and templates for coding agents.
 
-- [Writing TypeScript](#writing-typescript)
-- [Writing Tests](#writing-tests)
-- [Writing Docs](#writing-docs)
-- [Writing AGENTS.md](#writing-agentsmd)
+- **Rules**
+  - [Writing TypeScript](#writing-typescript)
+  - [Writing Tests](#writing-tests)
+  - [Writing Docs](#writing-docs)
+- **Templates**  
+  - [AGENTS.md](#agentsmd-template)
 
 ## Rules
 
 Browse the rules below and install them individually as needed.
 
 > [!TIP]
-> By default, all rules install to `.agents/rules`. If your coding agent uses a different
-> location, update `RULES_DIR` below and the rule links in `AGENTS.md` to match.
+> By default, all rules are installed to `.agents/rules`. If your coding agent uses a different
+> location, update `RULES_DIR` variable in the snippets.
 
 ### Writing TypeScript
 
-Organize your TypeScript source files to make code easier to read and maintain.
+Write your TypeScript source files to make code easier to read and maintain for both humans and agents.
 
 [Rule source](rules/writing-typescript.md).
 
@@ -41,8 +43,7 @@ When creating or editing TypeScript source files, follow
 
 ### Writing Tests
 
-Write tests that clearly show the behavior being
-verified, with simple steps and assertions.
+Write tests that human can read.
 
 [Rule source](rules/writing-tests.md).
 
@@ -66,7 +67,7 @@ When creating or editing test files, follow
 
 ### Writing Docs
 
-Write clear and readable documentation for humans.
+Write concise and readable documentation for humans.
 
 [Rule source](rules/writing-docs.md).
 
@@ -88,21 +89,6 @@ When writing, editing, or reviewing documentation, follow
 [the Writing Docs rule](.agents/rules/writing-docs.md).
 ```
 
-### Writing AGENTS.md
-
-Write clear `AGENTS.md` instructions for your agents.
-
-[Rule source](rules/writing-agents-md.md).
-
-Install to `.agents/rules`:
-
-```sh
-RULES_DIR=".agents/rules"
-mkdir -p "$RULES_DIR"
-curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-agents-md.md \
-  -o "$RULES_DIR/writing-agents-md.md"
-```
-
 ## Install All Rules
 
 Run this script from your project's root to install or update all rules:
@@ -114,15 +100,23 @@ mkdir -p "$RULES_DIR"
 for rule in \
   writing-typescript \
   writing-tests \
-  writing-docs \
-  writing-agents-md
+  writing-docs
 do
   curl -fsSL "https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/$rule.md" \
     -o "$RULES_DIR/$rule.md" || break
 done
 ```
 
+## Templates
+
+### AGENTS.md Template
+
+Start with reusable instructions for communication, workflow, and rule loading.
+Copy selected sections from [the template](templates/agents-md.md) into your
+project’s `AGENTS.md` and adapt them to your needs. Include only references to
+rules you have installed, and adjust their paths to match your project.
+
 ## Contributing
 
-Edit files under `rules/`, following [the repository guidance](AGENTS.md).
+Edit files under `rules/` or `templates/`, following [the repository guidance](AGENTS.md).
 No build step is needed.
