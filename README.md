@@ -6,6 +6,7 @@ Opinionated rules and templates for coding agents.
   - [Writing TypeScript](#writing-typescript)
   - [Writing Tests](#writing-tests)
   - [Writing Docs](#writing-docs)
+  - [Install all rules](#install-all-rules)
 - **Templates**  
   - [AGENTS.md](#agentsmd-template)
 
