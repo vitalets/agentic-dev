@@ -38,7 +38,7 @@ Append to `AGENTS.md`:
 ## Writing TypeScript
 
 When creating or editing TypeScript source files, follow
-[the Writing TypeScript rule](.agents/rules/writing-typescript.md).
+the [Writing TypeScript rule](.agents/rules/writing-typescript.md).
 ```
 
 ### Writing Tests
@@ -59,10 +59,10 @@ curl -fsSL https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/wri
 Append to `AGENTS.md`:
 
 ```markdown
-## Tests
+## Writing Tests
 
 When creating or editing test files, follow
-[the Writing Tests rule](.agents/rules/writing-tests.md).
+the [Writing Tests rule](.agents/rules/writing-tests.md).
 ```
 
 ### Writing Docs
@@ -86,7 +86,7 @@ Append to `AGENTS.md`:
 ## Documentation
 
 When writing, editing, or reviewing documentation, follow
-[the Writing Docs rule](.agents/rules/writing-docs.md).
+the [Writing Docs rule](.agents/rules/writing-docs.md).
 ```
 
 ## Install All Rules
@@ -111,12 +111,9 @@ done
 
 ### AGENTS.md Template
 
-Start with reusable instructions for communication, workflow, and rule loading.
-Copy selected sections from [the template](templates/agents-md.md) into your
-project’s `AGENTS.md` and adapt them to your needs. Include only references to
-rules you have installed, and adjust their paths to match your project.
+Pick applicable bullets from the [AGENTS.md template](templates/agents-md.md).
 
 ## Contributing
 
-Edit files under `rules/` or `templates/`, following [the repository guidance](AGENTS.md).
+Edit files under `rules/` or `templates/`, following the [repository guidance](AGENTS.md).
 No build step is needed.

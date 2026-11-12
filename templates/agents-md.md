@@ -1,6 +1,6 @@
 # Agentic Rules
 
-*Copy and adapt the sections below for your project’s `AGENTS.md`.*
+*Add the relevant sections to your `AGENTS.md`. Open the [source](https://raw.githubusercontent.com/vitalets/agentic-dev/main/templates/agents-md.md) for easy copying.*
 
 ## Communication
 
@@ -22,14 +22,14 @@
 ## Writing TypeScript
 
 When writing, editing, or reviewing TypeScript source files, follow
-[the Writing TypeScript rules](.agents/rules/writing-typescript.md).
+the [Writing TypeScript rules](.agents/rules/writing-typescript.md).
 
 ## Writing Tests
 
 When writing, editing, or reviewing test files, follow
-[the Writing Tests rules](.agents/rules/writing-tests.md).
+the [Writing Tests rules](.agents/rules/writing-tests.md).
 
 ## Writing Docs
 
 When writing, editing, or reviewing documentation, follow
-[the Writing Docs rules](.agents/rules/writing-docs.md).
+the [Writing Docs rules](.agents/rules/writing-docs.md).
