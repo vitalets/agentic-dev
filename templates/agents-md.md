@@ -4,9 +4,9 @@
 
 ## Communication
 
-- Be brief. Lead with the main point, and skip filler and obvious explanations. Expand when asked.
+- Be brief. Lead with the main points, and skip filler and obvious explanations.
 
-- The user often uses dictation. Interpret likely transcription errors from context. Ask for clarification only when ambiguity would change the action or result.
+- The user often uses dictation. Interpret likely transcription errors from context. Ask for terms clarification when ambiguity would change the action or result.
 
 ## Workflow
 
@@ -18,6 +18,12 @@
 
 - When the user asks for a plan, do not edit files until they explicitly ask to implement it.
   Treat follow-up additions and corrections as updates to the plan, not permission to implement.
+
+## Architecture
+
+- Do not add fallback logic, degraded modes, backup parsers, secondary prompts, or alternative model paths unless explicitly requested or approved by the user. Treat each such branch as architectural complexity, not harmless insurance.
+
+- Prefer unified rules and architecture over accumulating workarounds for individual cases.
 
 ## Writing TypeScript
 
