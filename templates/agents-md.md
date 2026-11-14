@@ -19,11 +19,17 @@
 - When the user asks for a plan, do not edit files until they explicitly ask to implement it.
   Treat follow-up additions and corrections as updates to the plan, not permission to implement.
 
-## Architecture
+## Implementation
+
+- Clarify ambiguous scope before implementing. Do not add unrequested nice-to-have features.
+
+- Avoid overengineering. Choose simpler, clearer, more idiomatic solutions whenever they preserve the required functionality.
 
 - Do not add fallback logic, degraded modes, backup parsers, secondary prompts, or alternative model paths unless explicitly requested or approved by the user. Treat each such branch as architectural complexity, not harmless insurance.
 
 - Prefer unified rules and architecture over accumulating workarounds for individual cases.
+
+- When a feature does not fit the existing architecture, propose architectural changes instead of adding workarounds. Explain why the changes are needed and obtain the user's approval before implementing them, unless already explicitly approved.
 
 ## Writing TypeScript
 
