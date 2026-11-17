@@ -26,7 +26,9 @@ To install or update the rule, give your agent this prompt:
 Install or update the rule below,
 following project's rule-storage conventions
 and preserving local customizations.
+
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-typescript.md
+
 Add or update a reference in AGENTS.md or CLAUDE.md
 stating when the rule applies.
 ```
@@ -50,7 +52,9 @@ To install or update the rule, give your agent this prompt:
 Install or update the rule below,
 following project's rule-storage conventions
 and preserving local customizations.
+
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-tests.md
+
 Add or update a reference in AGENTS.md or CLAUDE.md
 stating when the rule applies.
 ```
@@ -74,7 +78,9 @@ To install or update the rule, give your agent this prompt:
 Install or update the rule below,
 following project's rule-storage conventions
 and preserving local customizations.
+
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-docs.md
+
 Add or update a reference in AGENTS.md or CLAUDE.md
 stating when the rule applies.
 ```
@@ -94,9 +100,11 @@ Give your agent this prompt:
 Install or update the rules below,
 following project's rule-storage conventions
 and preserving local customizations.
+
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-typescript.md
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-tests.md
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-docs.md
+
 Add or update references in AGENTS.md or CLAUDE.md
 stating when each rule applies.
 ```
@@ -113,6 +121,7 @@ To install or update the template, give your agent this prompt:
 Install or update AGENTS.md or CLAUDE.md
 using applicable sections from the template below,
 following project's conventions and preserving local customizations.
+
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/templates/agents-md.md
 ```
 
