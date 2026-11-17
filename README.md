@@ -23,15 +23,19 @@ Write your TypeScript source files to make code easier to read and maintain for 
 To install or update the rule, give your agent this prompt:
 
 ```text
-Install or update the rule below, following project's rule-storage conventions and preserving local customizations.
+Install or update the rule below,
+following project's rule-storage conventions
+and preserving local customizations.
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-typescript.md
-Add or update a reference in AGENTS.md or CLAUDE.md stating when the rule applies.
+Add or update a reference in AGENTS.md or CLAUDE.md
+stating when the rule applies.
 ```
 
 To review an existing codebase after installing or updating this rule, use this prompt:
 
 ```text
-Review the existing codebase for compliance with the Writing TypeScript rule and report violations with suggested fixes.
+Review the existing codebase for compliance with the Writing TypeScript rule
+and report violations with suggested fixes.
 ```
 
 ### Writing Tests
@@ -43,15 +47,19 @@ Write tests that human can read.
 To install or update the rule, give your agent this prompt:
 
 ```text
-Install or update the rule below, following project's rule-storage conventions and preserving local customizations.
+Install or update the rule below,
+following project's rule-storage conventions
+and preserving local customizations.
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-tests.md
-Add or update a reference in AGENTS.md or CLAUDE.md stating when the rule applies.
+Add or update a reference in AGENTS.md or CLAUDE.md
+stating when the rule applies.
 ```
 
 To review an existing codebase after installing or updating this rule, use this prompt:
 
 ```text
-Review the existing codebase for compliance with the Writing Tests rule and report violations with suggested fixes.
+Review the existing codebase for compliance with the Writing Tests rule
+and report violations with suggested fixes.
 ```
 
 ### Writing Docs
@@ -63,15 +71,19 @@ Write concise and readable documentation for humans.
 To install or update the rule, give your agent this prompt:
 
 ```text
-Install or update the rule below, following project's rule-storage conventions and preserving local customizations.
+Install or update the rule below,
+following project's rule-storage conventions
+and preserving local customizations.
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-docs.md
-Add or update a reference in AGENTS.md or CLAUDE.md stating when the rule applies.
+Add or update a reference in AGENTS.md or CLAUDE.md
+stating when the rule applies.
 ```
 
 To review an existing codebase after installing or updating this rule, use this prompt:
 
 ```text
-Review the existing codebase for compliance with the Writing Docs rule and report violations with suggested fixes.
+Review the existing codebase for compliance with the Writing Docs rule
+and report violations with suggested fixes.
 ```
 
 ## Install All Rules
@@ -79,11 +91,14 @@ Review the existing codebase for compliance with the Writing Docs rule and repor
 Give your agent this prompt:
 
 ```text
-Install or update the rules below, following project's rule-storage conventions and preserving local customizations.
+Install or update the rules below,
+following project's rule-storage conventions
+and preserving local customizations.
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-typescript.md
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-tests.md
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/rules/writing-docs.md
-Add or update references in AGENTS.md or CLAUDE.md stating when each rule applies.
+Add or update references in AGENTS.md or CLAUDE.md
+stating when each rule applies.
 ```
 
 ## Templates
@@ -95,7 +110,9 @@ Add or update references in AGENTS.md or CLAUDE.md stating when each rule applie
 To install or update the template, give your agent this prompt:
 
 ```text
-Install or update AGENTS.md or CLAUDE.md using applicable sections from the template below, following project's conventions and preserving local customizations.
+Install or update AGENTS.md or CLAUDE.md
+using applicable sections from the template below,
+following project's conventions and preserving local customizations.
 - https://raw.githubusercontent.com/vitalets/agentic-dev/main/templates/agents-md.md
 ```
 
