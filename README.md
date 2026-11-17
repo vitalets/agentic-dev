@@ -90,7 +90,14 @@ Add or update references in AGENTS.md or CLAUDE.md stating when each rule applie
 
 ### AGENTS.md Template
 
-Pick applicable bullets from the [AGENTS.md template](templates/agents-md.md).
+[Template source](templates/agents-md.md).
+
+To install or update the template, give your agent this prompt:
+
+```text
+Install or update AGENTS.md or CLAUDE.md using applicable sections from the template below, following project's conventions and preserving local customizations.
+- https://raw.githubusercontent.com/vitalets/agentic-dev/main/templates/agents-md.md
+```
 
 ## Contributing
 
